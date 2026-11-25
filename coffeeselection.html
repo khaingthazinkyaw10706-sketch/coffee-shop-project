@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coffee Selection - Unique Blends</title>
+
+  <link rel="stylesheet" href="coffee.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">
+      <img src="splashing-file.jpg" alt="Logo">
+      <span>Bean Boutique</span>
+    </div>
+    <nav>
+      <a href="coffee.html">Home</a>
+      <a href="coffeeselection.html">Coffee Selection</a>
+      <a href="brewingequipment.html">Brewing equipment</a>
+      <a href="cart.html">Shopping cart</a>
+      <a href="event-workshop.html">Events & workshops</a>
+      <a href="special-offers.html">Special Offers</a>
+    </nav>
+  </header>
+  <button id="openModalBtn">Verify</button>
+<button id="openModalBtn" style="display:none;"></button>
+  <section class="coffee-hero">
+    <h1>Our Unique Coffee Blends</h1>
+    <p>Discover flavors from around the world, freshly roasted for you.</p>
+  </section>
+    
+  
+    <!-- Category 1: Unique Blends -->
+    <div class="category-section">
+      <h2 class="category-heading">
+        <i class="fas fa-blender"></i>
+        Unique Blends
+      </h2>
+    <div class="coffee-grid">
+      <div class="coffee-card">
+        <img src="houseblend.jpg" alt="House Blend">
+       <h3>House Blend</h3>
+          <p class="description">Balanced mix of Latin American beans, great all-rounder.</p>
+<p class="notes"><strong>Tasting Notes:</strong> Chocolate, nuts, mild fruit</p>
+<p class="brew"><strong>Best Brewed:</strong> Drip, espresso</p>
+<p class="equipment"><strong>Equipment & Tips:</strong> Medium grind</p>
+<p class="price"><strong>Price:</strong> $12</p>
+<button onclick="addToCart('House Blend', 12, 'houseblend.jpg')">Add to Cart</button>
+      </div>
+
+      <div class="coffee-card">
+        <img src="breakfast-blend.jpg" alt="Breakfast Blend">
+<h3>Breakfast Blend</h3>
+<p class="description">Lighter roast, bright acidity, perfect for morning coffee.</p>
+<p class="notes"><strong>Tasting Notes:</strong> Citrus, floral, crisp</p>
+<p class="brew"><strong>Best Brewed:</strong> Pour over, drip</p>
+<p class="equipment"><strong>Equipment & Tips:</strong> Highlight with clean water and paper filter</p>
+<p class="price"><strong>Price:</strong> $13</p>
+<button onclick="addToCart('Breakfast Blend', 13, 'breakfast-blend.jpg')">Add to Cart</button>
+      </div>
+
+      <div class="coffee-card">
+       <img src="italian-roast-blend.jpg" alt="Italian Roast Blend">
+<h3>Italian Roast Blend</h3>
+<p class="description">Dark roast blend with bold, smoky flavors.</p>
+<p class="notes"><strong>Tasting Notes:</strong> Smoky, bittersweet, bold</p>
+<p class="brew"><strong>Best Brewed:</strong> Espresso, Moka pot</p>
+<p class="equipment"><strong>Equipment & Tips:</strong> Use slightly cooler water (90°C) to reduce bitterness</p>
+<p class="price"><strong>Price:</strong> $14</p>
+<button onclick="addToCart('Italian Roast Blend', 14, 'italian-roast-blend.jpg')">Add to Cart</button>
+</div>
+
+      <div class="coffee-card">
+        <img src="mocha-java-blend.jpg" alt="Mocha Java Blend">
+<h3>Mocha Java Blend</h3>
+<p class="description">Historic blend (Yemen Mocha + Java) with complex flavors.</p>
+<p class="notes"><strong>Tasting Notes:</strong> Winey, spicy, full</p>
+<p class="brew"><strong>Best Brewed:</strong> Pour over, French press</p>
+<p class="equipment"><strong>Equipment & Tips:</strong> Compliments with milk; medium-coarse grind</p>
+<p class="price"><strong>Price:</strong> $15</p>
+<button onclick="addToCart('Mocha Java Blend', 15, 'mocha-java-blend.jpg')">Add to Cart</button>
+</div>
+</div> <!-- Close coffee-grid for Unique Blends -->
+
+  <!-- Category 2: Single Origin -->
+      <div class="category-section">
+      <h2 class="category-heading">
+        <i class="fas fa-globe-americas"></i>
+        Single Origin
+      </h2>
+    
+    <div class="coffee-grid">
+      <div class="coffee-card">
+        <img src="Ethiopia-Yirgacheffe.jpg" alt="Ethiopia Yirgacheffe">
+  <h3>Ethiopia (Yirgacheffe)</h3>
+  <p class="description">High-altitude heirloom varietals.</p>
+  <p class="notes"><strong>Tasting Notes:</strong> Floral, tea-like, bergamot</p>
+  <p class="brew"><strong>Best Brewed:</strong> Pour over, Chemex</p>
+  <p class="equipment"><strong>Equipment & Tips:</strong> Use 1:15 ratio; highlight clarity with paper filter</p>
+  <p class="price"><strong>Price:</strong> $16</p>
+  <button onclick="addToCart('Ethiopia Yirgacheffe', 16, 'Ethiopia-Yirgacheffe.jpg')">Add to Cart</button>
+</div>
+
+      <div class="coffee-card">
+        <img src="yemen-mocha.jpg" alt="Yemen Mocha">
+  <h3>Yemen (Mocha)</h3>
+  <p class="description">Ancient heirloom beans with rich, complex flavors.</p>
+  <p class="notes"><strong>Tasting Notes:</strong> Cocoa, spice, winey fruit</p>
+  <p class="brew"><strong>Best Brewed:</strong> Moka pot, espresso</p>
+  <p class="equipment"><strong>Equipment & Tips:</strong> Brew gently—small dose, medium-fine grind</p>
+  <p class="price"><strong>Price:</strong> $18</p>
+  <button onclick="addToCart('Yemen Mocha', 18, 'yemen-mocha.jpg')">Add to Cart</button>
+</div>
+
+      <div class="coffee-card">
+        <img src="Kenya-AA.jpg" alt="Kenya AA">
+  <h3>Kenya (AA)</h3>
+  <p class="description">Washed Arabica with high acidity and bright flavors.</p>
+  <p class="notes"><strong>Tasting Notes:</strong> Blackcurrant, grapefruit, bright</p>
+  <p class="brew"><strong>Best Brewed:</strong> Pour over</p>
+  <p class="equipment"><strong>Equipment & Tips:</strong> Bloom 30s; pour gently to control extraction</p>
+  <p class="price"><strong>Price:</strong> $15</p>
+  <button onclick="addToCart('Kenya AA', 15, 'Kenya-AA.jpg')">Add to Cart</button>
+</div>
+
+      <div class="coffee-card">
+      <img src="colombia-hulia.jpg" alt="Colombia Huila">
+  <h3>Colombia (Huila)</h3>
+  <p class="description">Balanced, medium body coffee from Colombia.</p>
+  <p class="notes"><strong>Tasting Notes:</strong> Caramel, citrus, red apple</p>
+  <p class="brew"><strong>Best Brewed:</strong> Drip, French press</p>
+  <p class="equipment"><strong>Equipment & Tips:</strong> Great everyday brew; medium grind</p>
+  <p class="price"><strong>Price:</strong> $14</p>
+  <button onclick="addToCart('Colombia Huila', 14, 'colombia-hulia.jpg')">Add to Cart</button>
+      </div>
+      </div> 
+</div> <!-- Close coffee-grid for Single Origin -->
+    
+<!-- Category 3: Specialty Drinks -->
+    <div class="category-section">
+      <h2 class="category-heading">
+        <i class="fas fa-mug-hot"></i>
+        Specialty Drinks
+      </h2>
+    <div class="coffee-grid">
+      <div class="coffee-card">
+  <img src="mocha.jpg" alt="Mocha">
+  <h3>Mocha</h3>
+  <p class="description">Rich chocolate and espresso blend, perfect for a sweet treat.</p>
+  <p class="notes"><strong>Tasting Notes:</strong> Chocolate, coffee, creamy</p>
+  <p class="brew"><strong>Best Brewed:</strong> Espresso, Moka pot</p>
+  <p class="equipment"><strong>Equipment & Tips:</strong> Top with whipped cream or cocoa powder</p>
+  <p class="price"><strong>Price:</strong> $15</p>
+  <button onclick="addToCart('Mocha', 15, 'mocha.jpg')">Add to Cart</button>
+</div>
+
+<div class="coffee-card">
+  <img src="matcha.jpg" alt="Matcha Latte">
+  <h3>Matcha Latte</h3>
+  <p class="description">Smooth Japanese green tea latte with creamy texture.</p>
+  <p class="notes"><strong>Tasting Notes:</strong> Umami, vegetal, creamy</p>
+  <p class="brew"><strong>Best Brewed:</strong> Whisked with hot milk or milk alternative</p>
+  <p class="equipment"><strong>Equipment & Tips:</strong> Use a bamboo whisk for authentic froth</p>
+  <p class="price"><strong>Price:</strong> $20</p>
+  <button onclick="addToCart('Matcha Latte', 20, 'matcha.jpg')">Add to Cart</button>
+</div>
+
+<div class="coffee-card">
+  <img src="spanish-latte.jpg" alt="Spanish Latte">
+  <h3>Spanish Latte</h3>
+  <p class="description">Sweet and creamy latte with condensed milk for indulgence.</p>
+  <p class="notes"><strong>Tasting Notes:</strong> Sweet, creamy, caramel</p>
+  <p class="brew"><strong>Best Brewed:</strong> Espresso with steamed milk and condensed milk</p>
+  <p class="equipment"><strong>Equipment & Tips:</strong> Adjust sweetness to taste</p>
+  <p class="price"><strong>Price:</strong> $15</p>
+  <button onclick="addToCart('Spanish Latte', 15, 'spanish-latte.jpg')">Add to Cart</button>
+</div>
+
+<div class="coffee-card">
+  <img src="flatwhite.jpg" alt="Flat White">
+  <h3>Flat White</h3>
+  <p class="description">Smooth espresso-based drink with velvety microfoam milk.</p>
+  <p class="notes"><strong>Tasting Notes:</strong> Coffee-forward, creamy, balanced</p>
+  <p class="brew"><strong>Best Brewed:</strong> Espresso with steamed milk</p>
+  <p class="equipment"><strong>Equipment & Tips:</strong> Perfect with latte art; microfoam texture matters</p>
+  <p class="price"><strong>Price:</strong> $14</p>
+  <button onclick="addToCart('Flat White', 14, 'flatwhite.jpg')">Add to Cart</button>
+</div>
+</div>
+</section>
+  
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h4>Products</h4>
+        <ul>
+          <li>Single Origin</li>
+          <li>Espresso Blends</li>
+          <li>Cold Brews</li>
+        </ul>
+        <p class="date"></p>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li>About Us</li>
+          <li>Locations</li>
+          <li>Careers</li>
+          <li>Support</li>
+        </ul>
+      </div>
+
+
+  <!-- ADD OPENING HOURS HERE -->
+  <section class="opening-hours">
+    <div class="container">
+      <h2>Opening Hours</h2>
+      <div class="hours-info">
+        <p><strong>Thursday to Sunday</strong></p>
+        <p>9:00 AM to 5:00 PM</p>
+        <p class="last-order">Last order at 4:30 PM</p>
+      </div>
+    </div>
+  </section>
+
+  
+      <div class="footer-col">
+        <h4>Follow Us</h4>
+        <div class="socials">
+          <a href="https://facebook.com" target="_blank" class="facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://instagram.com" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://twitter.com" target="_blank" class="twitter"><i class="fab fa-twitter"></i></a>
+          <a href="https://youtube.com" target="_blank" class="youtube"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-col subscribe">
+        <h4>Subscribe</h4>
+        <p>Join our email newsletter for exclusive offers and events.</p>
+        <input type="email" placeholder="Enter your email">
+        <button>Subscribe</button>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Bean Boutique Coffeeshop. All Rights Reserved.</p>
+      <p> since 2006</p>
+    </div>
+  </footer>
+
+
+  <script>
+    // Cart Functionality
+    function addToCart(name, price, image) {
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      
+      let existingItem = cart.find(item => item.name === name);
+      if (existingItem) {
+        existingItem.qty += 1;
+      } else {
+        cart.push({
+          id: Date.now(),
+          name: name,
+          price: price,
+          qty: 1,
+          image: image
+        });
+      }
+      
+      localStorage.setItem("cart", JSON.stringify(cart));
+      
+      const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
+      const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+      
+      Swal.fire({
+        icon: 'success',
+        title: 'Added to Cart!',
+        html: `<p><strong>${name}</strong> has been added to your cart.</p>
+               <p><strong>Total Items:</strong> ${totalItems}<br>
+               <strong>Total:</strong> $${totalPrice.toFixed(2)}</p>`,
+        confirmButtonText: 'OK',
+        confirmButtonColor: '#6B4226',
+        background: '#fff',
+        color: '#333',
+        showClass: {
+          popup: 'animate__animated animate__fadeInDown'
+        },
+        hideClass: {
+          popup: 'animate__animated animate__fadeOutUp'
+        }
+      });
+    }
+
+    // Footer Date
+    const dateElements = document.querySelectorAll(".date");
+    const options = { weekday: "long", year: "numeric", month: "long", day: "numeric" };
+    const today = new Date().toLocaleDateString("en-US", options);
+    dateElements.forEach(el => el.textContent = today);
+  </script>
+<!-- ✅ Your Existing Code Ends Here -->
+
+<!-- ✅ PASTE YOUR SECURITY POPUP HERE -->
+<div class="modal" id="recaptchaModal">
+  <div class="modal-content">
+    <span class="close-btn" id="closeModalBtn">&times;</span>
+    <h2>Verify You Are Human</h2>
+    <div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"></div>
+    <button id="checkBtn">Check Verification</button>
+    <div id="status"></div>
+  </div>
+</div>
+
+<script>
+  const modal = document.getElementById("recaptchaModal");
+  const openModalBtn = document.getElementById("openModalBtn");
+  const closeModalBtn = document.getElementById("closeModalBtn");
+  const checkBtn = document.getElementById("checkBtn");
+  const status = document.getElementById("status");
+
+  openModalBtn.addEventListener("click", () => {
+    modal.style.display = "flex";
+    status.textContent = "";
+    grecaptcha.reset();
+  });
+
+  closeModalBtn.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+
+  window.addEventListener("click", (e) => {
+    if(e.target === modal) modal.style.display = "none";
+  });
+
+  checkBtn.addEventListener("click", () => {
+    const response = grecaptcha.getResponse();
+    if(response.length === 0) {
+      status.style.color = "red";
+      status.textContent = "❌ Please verify you’re not a robot.";
+    } else {
+      status.style.color = "green";
+      status.textContent = "✅ Verified as human!";
+      setTimeout(() => { modal.style.display = "none"; }, 1500);
+    }
+  });
+</script>
+
+</body>
+</html>
+
+</body>
+</html>

@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bean Boutique Coffeeshop</title>
+  <link rel="stylesheet" href="coffee.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">
+      <img src="splashing-file.jpg" alt="Logo">
+      <span>Bean Boutique</span>
+    </div>
+    <nav>
+      <a href="coffee.html">Home</a>
+      <a href="coffeeselection.html">Coffee Selection</a>
+      <a href="brewingequipment.html">Brewing equipment</a>
+      <a href="cart.html">Shopping cart</a>
+      <a href="event-workshop.html">Events & workshops</a>
+      <a href="special-offers.html">Special Offers</a>
+    </nav>
+  </header>
+<!-- First-time user modal -->
+<div id="firstTimeModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; 
+    background: rgba(0,0,0,0.6); justify-content:center; align-items:center; z-index:1000;">
+  <div style="background:#fff; padding:30px; border-radius:10px; text-align:center; max-width:400px;">
+    <h2>Welcome to Bean Boutique!</h2>
+    <p>Sign up with your email and get <strong>10% off</strong> your first purchase!</p>
+    <input type="email" id="firstTimeEmail" placeholder="Enter your email" style="width:80%; padding:10px; margin:10px 0;">
+    <button id="firstTimeSubmit" style="padding:10px 20px; background:#6B4226; color:#fff; border:none; border-radius:5px;">Submit</button>
+  </div>
+</div>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Freshly Roasted Coffee</h1>
+      <p>Discover our signature blends and single-origin coffees</p>
+      <button>Shop Now</button>
+    </div>
+    <div class="hero-img">
+      <img src="coffeeshop.jpg" alt="Coffee">
+    </div>
+  </section>
+
+  <section class="info-section">
+    <h2>Why Choose Us?</h2>
+    <p>We serve freshly brewed coffee and handcrafted meals in a cozy, welcoming environment.</p>
+  </section>
+
+  <section class="map-section">
+    <div class="container">
+      <h1>Bean Boutique Coffee Shop</h1>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3819.512332323266!2d96.11199881536972!3d21.95801299226765!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30cb6e3c759b20df%3A0xc2fbc7b48e3e7a19!2sBean%20Boutique%20Coffee%20Shop!5e0!3m2!1sen!2smm!4v1692955000000"
+        width="600" 
+        height="400" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy">
+      </iframe>
+    </div>
+  </section>
+
+  <section class="slideshow-section">
+    <h2>Our Special Menu</h2>
+    <div class="slideshow-container">
+      <div class="slide fade"><img src="c1.jpg" alt="Meal 1"></div>
+      <div class="slide fade"><img src="c2.jpg" alt="Meal 2"></div>
+      <div class="slide fade"><img src="c3.jpg" alt="Meal 3"></div>
+      <div class="slide fade"><img src="c4.jpg" alt="Meal 4"></div>
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <div class="dots">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+      <span class="dot" onclick="currentSlide(4)"></span>
+    </div>
+  </section>
+
+  <section class="coffee-catalogue">
+    <h2>Our Coffee Selection</h2>
+    <div class="coffee-grid">
+      <div class="coffee-card">
+        <img src="latte.jpg" alt="Ethiopian Yirgacheffe">
+        <h3>latte</h3>
+          <p class="description">A smooth, creamy coffee made with rich espresso and steamed milk.</p>
+          <p class="notes"><strong>Tasting Notes:</strong> Silky, mellow, hints of caramel and milk sweetness</p>
+          <p class="brew"><strong>Best Brewed:</strong> Espresso machine</p>
+        <p class="price"><strong>Price:</strong> $15</p>
+        <button onclick="addToCart('latte', 15, 'latte.jpg')">Add to Cart</button>
+      </div>
+
+      <div class="coffee-card">
+        <img src="expresso.jpg" alt="Colombian Supremo">
+        <h3>expresso</h3>
+         <p class="description">Bold and concentrated with a rich aroma and smooth crema.</p>
+         <p class="notes"><strong>Tasting Notes:</strong> Intense, dark chocolate, roasted nuts</p>
+         <p class="brew"><strong>Best Brewed:</strong> Espresso machine</p>
+       
+        <p class="price"><strong>Price:</strong> $18</p>
+        <button onclick="addToCart('expresso', 18, 'expresso.jpg')">Add to Cart</button>
+      </div>
+
+      <div class="coffee-card">
+        <img src="cappuccino.jpg" alt="Sumatra Mandheling">
+        <h3>cappuccino</h3>
+          <p class="description">A perfect balance of espresso, steamed milk, and frothy foam.</p>
+          <p class="notes"><strong>Tasting Notes:</strong> Creamy texture, cocoa, and toasted almond</p>
+          <p class="brew"><strong>Best Brewed:</strong> Espresso machine</p>
+        <p class="price"><strong>Price:</strong> $20</p>
+        <button onclick="addToCart('cappuccino', 20, 'cappuccino.jpg')">Add to Cart</button>
+      </div>
+
+      <div class="coffee-card">
+        <img src="americano.jpg" alt="House Blend">
+        <h3>americano</h3>
+        <p class="description">Espresso diluted with hot water for a smooth, bold flavor.</p>
+         <p class="notes"><strong>Tasting Notes:</strong> Roasted nuts, cocoa, and a clean finish</p>
+        <p class="brew"><strong>Best Brewed:</strong> Espresso with added hot water</p>
+        <p class="price"><strong>Price:</strong> $16</p>
+        <button onclick="addToCart('americano', 16, 'americano.jpg')">Add to Cart</button>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h4>Products</h4>
+        <ul>
+          <li>Single Origin</li>
+          <li>Espresso Blends</li>
+          <li>Cold Brews</li>
+        </ul>
+        <p class="date"></p>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li>About Us</li>
+          <li>Locations</li>
+          <li>Careers</li>
+          <li>Support</li>
+        </ul>
+      </div>
+
+
+  <!-- ADD OPENING HOURS HERE -->
+  <section class="opening-hours">
+    <div class="container">
+      <h2>Opening Hours</h2>
+      <div class="hours-info">
+        <p><strong>Thursday to Sunday</strong></p>
+        <p>9:00 AM to 5:00 PM</p>
+        <p class="last-order">Last order at 4:30 PM</p>
+      </div>
+    </div>
+  </section>
+
+
+
+  
+  
+      <div class="footer-col">
+        <h4>Follow Us</h4>
+        <div class="socials">
+          <a href="https://facebook.com" target="_blank" class="facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://instagram.com" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://twitter.com" target="_blank" class="twitter"><i class="fab fa-twitter"></i></a>
+          <a href="https://youtube.com" target="_blank" class="youtube"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-col subscribe">
+        <h4>Subscribe</h4>
+        <p>Join our email newsletter for exclusive offers and events.</p>
+        <input type="email" placeholder="Enter your email">
+        <button>Subscribe</button>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Bean Boutique Coffeeshop. All Rights Reserved.</p>
+      <p> since 2006</p>
+    </div>
+  </footer>
+  
+
+  <script>
+    // Slideshow
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+      let slides = document.getElementsByClassName("slide");
+      let dots = document.getElementsByClassName("dot");
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) { slideIndex = 1 }
+      for (let i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].className += " active";
+      setTimeout(showSlides, 3000);
+    }
+
+    function plusSlides(n) {
+      slideIndex += n - 1;
+      showSlides();
+    }
+
+    function currentSlide(n) {
+      slideIndex = n - 1;
+      showSlides();
+    }
+
+    // Cart Functionality
+    function addToCart(name, price, image) {
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      
+      // Check if item exists
+      let existingItem = cart.find(item => item.name === name);
+      if (existingItem) {
+        existingItem.qty += 1;
+      } else {
+        cart.push({
+          id: Date.now(),
+          name: name,
+          price: price,
+          qty: 1,
+          image: image
+        });
+      }
+      
+      localStorage.setItem("cart", JSON.stringify(cart));
+      
+      // SweetAlert
+      const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
+      const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+      
+      Swal.fire({
+        icon: 'success',
+        title: 'Added to Cart!',
+        html: `<p><strong>${name}</strong> has been added to your cart.</p>
+               <p><strong>Total Items:</strong> ${totalItems}<br>
+               <strong>Total:</strong> $${totalPrice.toFixed(2)}</p>`,
+        confirmButtonText: 'OK',
+        confirmButtonColor: '#6B4226',
+        background: '#fff',
+        color: '#333',
+        showClass: {
+          popup: 'animate__animated animate__fadeInDown'
+        },
+        hideClass: {
+          popup: 'animate__animated animate__fadeOutUp'
+        }
+      });
+    }
+
+    // Footer Date
+    const dateElements = document.querySelectorAll(".date");
+    const options = { weekday: "long", year: "numeric", month: "long", day: "numeric" };
+    const today = new Date().toLocaleDateString("en-US", options);
+    dateElements.forEach(el => el.textContent = today);
+  </script>
+
+
+  <script>
+    // (your existing slideshow + cart code here)
+  </script>
+
+  <!-- ADD THIS SCRIPT HERE -->
+  <script>
+    // Check if user is first-time visitor
+    let firstVisit = localStorage.getItem("firstVisit");
+
+    if (!firstVisit) {
+      localStorage.setItem("firstVisit", "done");
+
+      document.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll(".register-btn").forEach(btn => {
+          btn.style.display = "none";
+        });
+
+        Swal.fire({
+          title: "Welcome to Bean Boutique!",
+          text: "Enjoy browsing! Registration will be available on your next visit.",
+          icon: "info",
+          confirmButtonText: "Okay"
+        });
+      });
+
+    } else {
+      document.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll(".register-btn").forEach(btn => {
+          btn.style.display = "inline-block";
+        });
+      });
+    }
+  </script>
+
+<script>
+window.onload = function () {
+    const modal = document.getElementById("firstTimeModal");
+    const submitBtn = document.getElementById("firstTimeSubmit");
+    const emailInput = document.getElementById("firstTimeEmail");
+
+    // Show modal only for first-time users
+    if (!localStorage.getItem("discountShown")) {
+        modal.style.display = "flex";
+        localStorage.setItem("discountShown", "true");
+    }
+
+    // Handle email submission
+    submitBtn.addEventListener("click", function() {
+        const email = emailInput.value.trim();
+        if(email) {
+            localStorage.setItem("firstTimeUserEmail", email);
+            modal.style.display = "none";
+
+            Swal.fire({
+                title: 'Thank you!',
+                text: 'Check your email for the 10% discount code.',
+                icon: 'success',
+                confirmButtonColor: '#6B4226'
+            });
+        } else {
+            Swal.fire({
+                title: 'Oops!',
+                text: 'Please enter a valid email.',
+                icon: 'error',
+                confirmButtonColor: '#6B4226'
+            });
+        }
+    });
+};
+</script>
+
+
+
+</body>
+</html> 
